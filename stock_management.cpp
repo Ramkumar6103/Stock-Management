@@ -59,6 +59,9 @@ class Product{
 int main(){
     vector<Product> pro;
     int choice;
+    int proId,quantity;
+    double perPrize;
+    string proName, sName, category;
     cout<<"Welcome to Ram Stock Management System\n\n";
     do{
         cout<<"Menu\n";
@@ -75,7 +78,21 @@ int main(){
         switch(choice){
             case 1:{
                cout<<"Add New Product to Inventory\n";
-               pro.add();
+               cout<<"Enter id :";
+               cin>>proId;
+               cout<<"Enter Product Name :";
+               cin>>proName;
+               cout<<"Enter Per Price :";
+               cin>>perPrize;
+               cout<<"Enter quantity :";
+               cin>>quantity;
+               cout<<"Enter category :";
+               cin>>category;
+               cout<<"Enter Supplier Name :";
+               cin>>sName;
+               Product p1(proId, proName, category, quantity, perPrize, sName);
+               pro.push_back(p1);
+               p1.displayProduct();
                break;
             }
             case 2:{
